@@ -3,8 +3,20 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import './index.css';
 
+function MyApp() {//function component
+  //it return jsx
+  
+  return (
+    <ul>
+    <li>item 1</li>
+    <li>item 2</li>
+    <li>item 3</li>
+  </ul>
+  )
+}
+
 ReactDOM.render(
-  <App />,
+  <MyApp />,
   document.getElementById('root')
 );
 
@@ -15,4 +27,4 @@ ReactDOM.render(
 
 
 var myNewP = document.createElement("p")
-myNewP.innerH
+myNewP.innerHTML = "This is a paragraph"
