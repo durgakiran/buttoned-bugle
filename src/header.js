@@ -1,6 +1,5 @@
 import React from 'react';
 import logo from './logo.svg';
-import './App.css';
 
 function Header() {//it's important start component name with capitals, others jsx won't compile
     return (
