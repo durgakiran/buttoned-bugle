@@ -23,7 +23,8 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      todos: toDoData
+      todos: toDoData,
+      character: {}
     }
     //why binding with this
     this.handleChange = this.handleChange.bind(this)
@@ -38,7 +39,8 @@ class App extends React.Component {
         return todo
       });
       return {
-        todoss: updatedTodos
+        todoss: updatedTodos,
+         character:: prevState.character
       }
     })
   }
@@ -65,6 +67,9 @@ class App extends React.Component {
   
   componentDidMount() {//life cycle method
     //runs only once, when component created
+    fetch("https://swapi.co/api/people/1")
+      .then(response => response.json())
+      .then(data => console.log(data))
     
   }
   
@@ -81,6 +86,7 @@ class App extends React.Component {
     * we can implement a logic the method could decide whether 
     * component should rerender or not
     */
+    return true;
   }
   
   componentWillUnmount(){
@@ -98,6 +104,7 @@ class App extends React.Component {
                     handleChange = {this.handleChange} />);
          
     return (
+      <div></div>
       <div className="todo-list">
         {toDoItemsNew}
       </div>
