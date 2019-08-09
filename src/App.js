@@ -24,7 +24,8 @@ class App extends React.Component {
     super();
     this.state = {
       todos: toDoData,
-      character: {}
+      character: {},
+      loadingChar: true
     }
     //why binding with this
     this.handleChange = this.handleChange.bind(this)
@@ -39,8 +40,8 @@ class App extends React.Component {
         return todo
       });
       return {
-        todoss: updatedTodos,
-         character:: prevState.character
+         todos: updatedTodos,
+         character: prevState.character
       }
     })
   }
@@ -69,7 +70,15 @@ class App extends React.Component {
     //runs only once, when component created
     fetch("https://swapi.co/api/people/1")
       .then(response => response.json())
-      .then(data => console.log(data))
+      .then(data => this.setState(prevState => {
+      console.log(data);
+      console.log(prevState);
+      let updatedState = {
+        todos: prevState.todos,
+        character: data
+      }
+      return {...updatedState};
+    }))
     
   }
   
@@ -104,10 +113,15 @@ class App extends React.Component {
                     handleChange = {this.handleChange} />);
          
     return (
-      <div></div>
-      <div className="todo-list">
-        {toDoItemsNew}
+      <div>
+        <div className="todo-list">
+          {toDoItemsNew}
+        </div>
+        <div className="starwar-char">
+          name: {this.state.character.name}   
+        </div>
       </div>
+      
     )
   }
 }
