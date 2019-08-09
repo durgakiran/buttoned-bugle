@@ -53,8 +53,14 @@ class App extends React.Component {
   }
   
   static getDerivedStateFromProps(props, state) {
+    //lifecycle nmethod
     //return the new, update state based upon the props
-    //do not use this much, since it probably for 
+    //do not use this much, since it probably for rare cases
+  }
+  
+  getSnapshotBeforeUpdae() {
+    //lifecycle method
+    //create a backup of the current way things are
   }
   
   componentDidMount() {//life cycle method
