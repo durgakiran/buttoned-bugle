@@ -42,9 +42,47 @@ class App extends React.Component {
       }
     })
   }
+  componentWillMount() {
+    //lifecycle method
+    //depricated
+  }
+  
+  componentWillUnmount() {
+    //lifecycle method
+    //depricated
+  }
+  
+  static getDerivedStateFromProps(props, state) {
+    //return the new, update state based upon the props
+    //do not use this much, since it probably for 
+  }
   
   componentDidMount() {//life cycle method
+    //runs only once, when component created
     
+  }
+  
+  //it is decpricated
+  componentWillRecieveProps(nextProps) {
+    //life cycle method
+    //runs when component created
+    //runs every time this component recieves props
+  }
+  
+  shouldComponentUpdate() {
+    //life cycle method
+    /*
+    * we can implement a logic the method could decide whether 
+    * component should rerender or not
+    */
+  }
+  
+  componentWillUnmount(){
+    //life cycle method
+    /*
+    *teardoewn or cleanup your code before your component disspears
+    *(e.g): remove event handlers
+    */
   }
   
   render() {//life cycle method
