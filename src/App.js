@@ -41,7 +41,8 @@ class App extends React.Component {
       });
       return {
          todos: updatedTodos,
-         character: prevState.character
+         character: prevState.character,
+         loadingChar: prevState.loadingChar
       }
     })
   }
@@ -75,7 +76,8 @@ class App extends React.Component {
       console.log(prevState);
       let updatedState = {
         todos: prevState.todos,
-        character: data
+        character: data,
+        loadingChar: false
       }
       return {...updatedState};
     }))
@@ -118,7 +120,7 @@ class App extends React.Component {
           {toDoItemsNew}
         </div>
         <div className="starwar-char">
-          name: {this.state.character.name}   
+          name: { this.state.loadingChar ? "loading...." : this.state.character.name}
         </div>
       </div>
       
