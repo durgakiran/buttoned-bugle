@@ -20,16 +20,19 @@ import './todo.css';
 // }
 
 class App extends React.Component {
-  
+  constructor() {
+    super();
+    this.toDoItems = this.generateItems();
+  }
   generateItems() {
-    const toDoItems = toDoData.map( data => <TodoItem  key= {data.id} item={data}/>)
-    return toDoItems;
+    
+    return toDoData.map( data => <TodoItem  key= {data.id} item={data}/>);
   }
   render() {
-    const toDoItems = this.generateItems();
+    
     return (
       <div className="todo-list">
-        {toDoItems}
+        {this.toDoItems}
       </div>
     )
   }
