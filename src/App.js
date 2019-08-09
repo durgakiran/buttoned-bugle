@@ -22,17 +22,17 @@ import './todo.css';
 class App extends React.Component {
   constructor() {
     super();
-    this.toDoItems = this.generateItems();
+    this.toDoItems = this.toDoData;
   }
   generateItems() {
     
     return toDoData.map( data => <TodoItem  key= {data.id} item={data}/>);
   }
   render() {
-    
+    let toDoItemsNew = this.sate.toDoData.map( data => <TodoItem  key= {data.id} item={data}/>);
     return (
       <div className="todo-list">
-        {this.toDoItems}
+        {toDoItemsNew}
       </div>
     )
   }
