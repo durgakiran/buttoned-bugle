@@ -1,6 +1,6 @@
 import React from 'react';//helps in compiling JSX
 import ReactDOM from 'react-dom';
-import TodoItem from "./TodoItem"; //default exported elements should not be imported using curly braces
+import App from "./App"; //default exported elements should not be imported using curly braces
 import './index.css';
 
 // function MyApp() {//function component
@@ -14,7 +14,7 @@ import './index.css';
 // }
 
 ReactDOM.render(
-  <TodoItem />,
+  <App />,
   document.getElementById('root')
 );
 

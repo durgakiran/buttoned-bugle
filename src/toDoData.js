@@ -24,4 +24,6 @@ const toDoData = [
         text: "Catch up on Arrested Development",
         completed: false,
     }
-]
+];
+
+export default toDoData;
