@@ -22,14 +22,33 @@ import './todo.css';
 class App extends React.Component {
   constructor() {
     super();
-    this.toDoItems = this.toDoData;
+    this.state = {
+      todos: toDoData
+    }
+    //why binding with this
+    this.handleChange = this.handleChange.bind(this)
   }
-  generateItems() {
-    
-    return toDoData.map( data => <TodoItem  key= {data.id} item={data}/>);
+  
+  handleChange(id) {
+    this.setState(prevState => {
+      const updatedTodos = prevState.todos.map(todo => {
+        if(todo.id === id) {
+          todo.completed = !todo.completed
+        }
+        return todo
+      });
+      return {
+        todoss: updatedTodos
+      }
+    })
   }
+  
   render() {
-    let toDoItemsNew = this.sate.toDoData.map( data => <TodoItem  key= {data.id} item={data}/>);
+    let toDoItemsNew = this.state
+    .todos
+    .map( data => <TodoItem  key= {data.id} item={data}
+                    handleChange = {this.handleChange} />);
+         
     return (
       <div className="todo-list">
         {toDoItemsNew}
