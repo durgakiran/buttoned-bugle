@@ -43,7 +43,11 @@ class App extends React.Component {
     })
   }
   
-  render() {
+  componentDidMount() {//life cycle method
+    
+  }
+  
+  render() {//life cycle method
     let toDoItemsNew = this.state
     .todos
     .map( data => <TodoItem  key= {data.id} item={data}
