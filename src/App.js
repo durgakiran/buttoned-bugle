@@ -3,6 +3,7 @@ import './App.css';
 import toDoData from "./toDoData"
 import TodoItem from "./TodoItem"
 import './todo.css';
+import Forms from "./forms";
 
 
 /**
@@ -48,16 +49,16 @@ class App extends React.Component {
   }
   componentWillMount() {
     //lifecycle method
-    //depricated
+    //deprecated
   }
   
   componentWillUnmount() {
     //lifecycle method
-    //depricated
+    //deprecated
   }
   
   static getDerivedStateFromProps(props, state) {
-    //lifecycle nmethod
+    //lifecycle method
     //return the new, update state based upon the props
     //do not use this much, since it probably for rare cases
   }
@@ -121,6 +122,9 @@ class App extends React.Component {
         </div>
         <div className="starwar-char">
           name: { this.state.loadingChar ? "loading...." : this.state.character.name}
+        </div>
+        <div className="form">
+          <Forms />
         </div>
       </div>
       
