@@ -1,0 +1,19 @@
+.todo-list {
+    padding: 20px;
+    border: 1px solid gainsboro;
+    margin: auto;
+    max-width: 300px;
+}
+.todo-item {
+    border-bottom: 1px solid gainsboro;
+    padding: 10px;
+}
+
+input, p{
+    display: inline;
+}
+
+.starwar-char{
+  margin: 30px;
+  color: grey
+}
