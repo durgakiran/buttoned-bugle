@@ -4,12 +4,20 @@ class Forms extends Component {
     constructor() {
         super();
         this.state = {}
-        this.handleChange.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+        this.handleCheckbox = this.handleCheckbox.bind(this);
     }
 
     handleChange(event) {
         this.setState({
-            firstName: event.target.value
+            firstName: event.target.value,
+            isFriendly: false
+        })
+    }
+
+    handleCheckbox(){
+        this.setState({
+            isFriendly: true
         })
     }
 
@@ -18,6 +26,7 @@ class Forms extends Component {
             <form>
                 <input type="text" placeholder="First Name" onChange={this.handleChange}/>
                 <h4>{this.state.firstName}</h4>
+                <input type="checkbox" name="is Friendly" checked={this.state.isFriendly} onChange={this.handleCheckbox}/>
             </form>
         )
     }
